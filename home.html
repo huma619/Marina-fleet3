@@ -1,0 +1,1864 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARINA FLEET</title>
+  <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container-fluid img {
+      height: 10%;
+      width: 10%;
+    }
+
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+
+    .navbar-nav {
+      color: #fff;
+      font-size: 1.3em;
+
+    }
+
+    .navbar-item {
+      color: #fff;
+
+
+    }
+
+    .nav-item:hover {
+      text-decoration: solid;
+      background: rgb(164, 212, 219);
+      width: 20%;
+      height: 20%;
+      font-size: 1.0em;
+
+
+    }
+
+    .dropdown-item:hover {
+
+      width: 100%;
+      height: 100%;
+      font-size: 1.2em;
+      color: white;
+    }
+
+
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 1500px;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .video-heading {
+       position: absolute; 
+       top: 50%; 
+       left: 50%;   
+       
+      transform: translate(-50%, -50%); 
+       color: rgb(202, 199, 199); 
+      font-size: 4.5rem;
+      font-weight: bold;
+     background-color: rgba(4, 30, 37, 0.5); 
+      padding: 10px 20px; 
+      border-radius: 15px;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+        .video-container {
+        padding: 10px;
+      }  
+
+      .video-heading {
+        font-size: 1.5rem;
+         padding: 8px 16px; 
+      }
+
+      video {
+        border-radius: 5px;
+      }
+    }
+
+
+    /* about css */
+
+    .about {
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about .main img {
+      width: 400px;
+      max-width: 100%;
+      height: auto;
+      padding: 0 10px;
+    }
+
+    .all-text {
+      width: 700px;
+      max-width: 100%;
+      padding: 0 10px;
+
+
+    }
+
+    .main {
+      width: 1290px;
+      max-width: 95%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .all-text h2 {
+      font-family: sans-serif;
+      font-weight: 400;
+      font-size: 2.5em;
+      color: #464444;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .all-text h1 {
+      font-size: 50px;
+      color: #111111;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .all-text p {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: #777777;
+      line-height: 30px;
+      margin-bottom: 35px;
+    }
+
+    .btn button {
+      background: white;
+      padding: 20px 32px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #111111;
+      border: none;
+      outline: none;
+      box-shadow: 0px 16px 32px 0px rgb(0 0 0 / 6%);
+      margin-right: 20px;
+    }
+
+    .btn button:hover {
+      background: #1d44f9;
+      color: white;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn .btn2 {
+      background: #111111;
+      color: white;
+    }
+
+    @media screen and (max-width:1250px) {
+      .about {
+        width: 100%;
+        height: auto;
+        padding: 60px 0;
+      }
+
+      .all-text {
+        text-align: center;
+        margin-top: 40px;
+      }
+    }
+
+    @media screen and (max-width:650px) {
+      .about .main img {
+        margin-bottom: 35px;
+      }
+
+      .all-text h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+
+    /* gallery css */
+
+    .container {
+      position: relative;
+      min-height: 100vh;
+
+    }
+
+    .container h1 {
+      font-size: 60px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      padding: 15px;
+      color: #000000;
+      text-align: center;
+      text-transform: capitalize
+    }
+
+    .container h1:hover {
+      color: #075670;
+    }
+
+    .container p {
+      font-size: 30px;
+      padding: 40px;
+      text-align: center;
+      text-transform: capitalize;
+      justify-content: center;
+      color: #075670;
+      font-weight: 600;
+
+    }
+
+    .container .container-image {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      padding: 10px;
+
+    }
+
+    .container .container-image .image {
+      height: 200px;
+      width: 350px;
+      border: 3px solid #000000;
+      box-shadow: 5px 10px 15px rgb(0, 0, 0);
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .container .container-image .image img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: -2s linear;
+    }
+
+    .container .container-image .image:hover img {
+      transform: scale(1.1);
+    }
+
+    .container .popup-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #fff;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+      display: none;
+
+    }
+
+    .container .popup-image span {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 60px;
+      font-weight: bolder;
+      color: #00c4ba;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .container .popup-image img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 3px solid #000000;
+      border-radius: 10px;
+      width: 750px;
+      object-fit: cover;
+      box-shadow: 10px 15px 20px black;
+    }
+
+    @media (max-width:768px) {
+      .container .popup-image img {
+        width: 95%;
+      }
+    }
+
+    /* packaging css */
+
+    h1 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-size: 50px;
+      transition: transform 0.2s;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    h1:hover {
+
+      transform: scale(1.05);
+      color: #075670;
+    }
+
+
+
+    main {
+      flex: 1;
+      padding: 1rem;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5rem;
+
+
+
+    }
+
+    .card {
+      background-color: #3586ff;
+      color: black;
+      border-radius: 8px;
+      box-shadow: 20px 20px 15px rgb(0, 0, 0);
+      overflow: hidden;
+      width: 300px;
+      margin: 1rem;
+      transition: transform 0.2s;
+      border: solid black 3px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .card-content p {
+      color: black;
+    }
+
+    button {
+      text-align: center;
+      background: #ffffff;
+      color: #000000;
+      justify-content: center;
+      margin: 5%;
+      width: 50%;
+      height: 50px;
+      font-size: 1.0em;
+      font-weight: bold;
+
+    }
+
+    button:hover {
+      background-color: #91fffb;
+    }
+
+    /* fishing css */
+
+    .container-fishing {
+      display: grid;
+      width: 80%;
+      margin: 40px auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+
+    }
+
+    .h1-fishing {
+      font-size: 60px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      padding: 15px;
+      color: #000000;
+      text-align: center;
+      text-transform: capitalize
+    }
+
+    p {
+      font-size: 1.5em;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .front img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+
+    }
+
+    .container1 {
+      position: relative;
+    }
+
+    .back h2 {
+      text-align: center;
+      justify-content: center;
+      margin: 25%;
+      font-size: 0.8em;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: rgb(0, 0, 0);
+      background-color: rgb(35, 148, 182);
+      padding: 15px;
+      transform: perspective(600px) rotateY(180deg);
+      transition: transform .5s linear 0s;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      border: 1px solid black;
+      box-shadow: 10px 10px 15px rgb(0, 0, 0);
+      font-size: 2.0em;
+    }
+
+    .front {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+
+      transform: perspective(600px) rotateY(0deg);
+      transition: transform .5s linear 0s;
+      border: 2px solid rgb(0, 0, 0);
+      box-shadow: 10px 10px 15px rgb(0, 0, 0);
+    }
+
+    .container1:hover>.front {
+      transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .container1:hover>.back {
+      transform: perspective(600px) rotateY(0deg);
+    }
+
+    @media(max-width:800px) {
+      .container-fishing {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:500px) {
+      .container-fishing {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    /* sailing css */
+
+
+    .container-sailing {
+      display: grid;
+      width: 80%;
+      margin: 40px auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+
+    }
+
+    .h1-sailing {
+      font-size: 60px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      padding: 15px;
+      color: #000000;
+      text-align: center;
+      text-transform: capitalize
+    }
+
+    p {
+      font-size: 1.5em;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .front img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+
+    }
+
+    .container3 {
+      position: relative;
+    }
+
+    .back h1 {
+      text-align: center;
+      justify-content: center;
+      margin: 25%;
+      font-size: 1.0em;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: rgb(0, 0, 0);
+      background-color: rgb(35, 148, 182);
+      padding: 15px;
+      transform: perspective(600px) rotateY(180deg);
+      transition: transform .5s linear 0s;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      border: 1px solid black;
+      box-shadow: 10px 10px 15px rgb(0, 0, 0);
+      font-size: 2.0em;
+    }
+
+    .front {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+
+      transform: perspective(600px) rotateY(0deg);
+      transition: transform .5s linear 0s;
+      border: 2px solid rgb(0, 0, 0);
+      box-shadow: 10px 10px 15px rgb(0, 0, 0);
+    }
+
+    .container3:hover>.front {
+      transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .container3:hover>.back {
+      transform: perspective(600px) rotateY(0deg);
+    }
+
+    @media(max-width:800px) {
+      .container-sailing {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:500px) {
+      .container-sailing {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+
+
+    /* luxury css */
+
+    .container-luxury {
+      display: grid;
+      width: 80%;
+      margin: 40px auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+
+    }
+
+    .h1-luxury {
+      font-size: 60px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      padding: 15px;
+      color: #000000;
+      text-align: center;
+      text-transform: capitalize
+    }
+
+    p {
+      font-size: 1.5em;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .front img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+
+    }
+
+    .container2 {
+      position: relative;
+    }
+
+    .back h1 {
+      text-align: center;
+      justify-content: center;
+      margin: 25%;
+      font-size: 1.0em;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: rgb(0, 0, 0);
+      background-color: rgb(35, 148, 182);
+      padding: 15px;
+      transform: perspective(600px) rotateY(180deg);
+      transition: transform .5s linear 0s;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      border: 1px solid black;
+      box-shadow: 10px 10px 15px rgb(0, 0, 0);
+      font-size: 2.0em;
+    }
+
+    .front {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+
+      transform: perspective(600px) rotateY(0deg);
+      transition: transform .5s linear 0s;
+      border: 2px solid rgb(0, 0, 0);
+      box-shadow: 10px 10px 15px rgb(0, 0, 0);
+    }
+
+    .container2:hover>.front {
+      transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .container2:hover>.back {
+      transform: perspective(600px) rotateY(0deg);
+    }
+
+    @media(max-width:800px) {
+      .container-luxury {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:500px) {
+      .container-luxury {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+
+    /* feedback css */
+
+
+
+    span {
+      color: rgb(152, 204, 222);
+    }
+
+    .feedback {
+      background: #000000;
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+      align-items: center;
+      grid-gap: 6rem;
+    }
+
+    .feedback-img img {
+      max-width: 80%;
+      width: 720px;
+      height: 500px;
+      border-radius: 10px;
+    }
+
+    .feedback-form h2 {
+      font-size: 50px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .feedback-form p {
+      color: #c6c9d8bf;
+      letter-spacing: 1px;
+      line-height: 26px;
+      font-size: 1.1rem;
+      margin-bottom: 3.8rem;
+    }
+
+    .feedback-form form {
+      position: relative;
+    }
+
+    .feedback-form form input,
+    form textarea {
+      width: 100%;
+      padding: 17px;
+      border: none;
+      outline: none;
+      background: #191919;
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      border-radius: 10px;
+    }
+
+    .feedback-form form input:hover,
+    form textarea:hover {
+      border: 2px solid rgb(152, 204, 222);
+    }
+
+
+
+
+    .feedback-form textarea {
+      resize: none;
+      height: 200px;
+    }
+
+    .feedback-form form .btn {
+      display: inline-block;
+      background: rgb(152, 204, 222);
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      width: 220px;
+      transition: ease .20s;
+      cursor: pointer;
+      color: black;
+    }
+
+    .feedback-form form .btn:hover {
+      border: 2px solid rgb(152, 204, 222);
+      background: transparent;
+      transform: scale(1.1);
+      color: rgb(152, 204, 222);
+      ;
+    }
+
+    @media(max-width:1570px) {
+
+      /* section{
+  padding: 80px 3%;
+  transition: .2s;
+} */
+      .feedback-form h2 {
+        font-size: 60px;
+      }
+
+      .feedback-form p {
+        margin-bottom: 3rem;
+      }
+    }
+
+    @media(max-width:1090px) {
+      .feedback {
+        grid-gap: 2rem;
+        transition: .3s;
+      }
+    }
+
+    @media(max-width:1000px) {
+      .feedback {
+        grid-template-columns: 1fr;
+      }
+
+      .feedback-form {
+        order: 2;
+      }
+
+      .feedback-img img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    /* contact css */
+
+    .contactusform {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 90%;
+      max-width: 550px;
+      margin: auto;
+      margin-top: 2em;
+    }
+
+    .header {
+      text-transform: capitalize;
+      font-weight: bold;
+      font-size: 3.1rem;
+      color: rgb(0, 0, 0);
+      margin: .5rem;
+    }
+
+    .heading,
+    .sub-heading {
+      margin-bottom: .5em;
+      font-weight: bold;
+      font-size: 1.0em;
+    }
+
+    .sub-heading {
+      text-align: left;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .contactform {
+      display: grid;
+      gap: 3em;
+      margin-top: 3em;
+    }
+
+    .para {
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+      line-height: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    .para2 {
+      text-align: left;
+    }
+
+    form {
+      width: 90%;
+    }
+
+    .input {
+      width: 95%;
+      max-width: 700px;
+      border: none;
+      font-size: .9rem;
+      padding: 1em;
+      outline: none;
+      margin-bottom: 1em;
+      background-color: rgb(221, 214, 214);
+      color: rgb(120, 180, 219);
+      border-radius: 10px;
+      border: 2px solid rgb(0, 0, 0);
+    }
+
+    .input:focus {
+      border: 3px solid rgb(105, 205, 230);
+    }
+
+    .input::placeholder {
+      text-transform: capitalize;
+    }
+
+    .submit {
+      background-color: rgb(36, 107, 124);
+      color: rgb(255, 254, 254);
+      border: none;
+      font-weight: bolder;
+      font-size: 1.5em;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+
+    }
+
+    /* .mapbg{
+    position: absolute;
+    background-color: rgb(222, 225, 228);
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 90%;
+    border-radius: 20px;
+} */
+    .map {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .contactmethod {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2em;
+      text-align: left;
+    }
+
+    .method {
+      display: flex;
+      align-items: center;
+    }
+
+    .contactIcon {
+      font-size: 2rem;
+      color: rgb(8, 67, 82);
+      width: 70px;
+
+    }
+
+
+
+
+    @media screen and (min-width:800px) {
+      .contactusform {
+        max-width: 1100px;
+      }
+
+      .contactform {
+        border-radius: 10px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contactmethod {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    /* footer css */
+
+    .footer {
+      position: relative;
+      width: 100%;
+      background: #3586ff;
+      min-height: 100px;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .social-icon {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .social-icon__item {
+      list-style: none;
+    }
+
+    .social-icon__link {
+      font-size: 2rem;
+      color: #fff;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+
+    .social-icon__link:hover {
+      transform: translateY(-10px);
+    }
+
+  
+
+    .footer p {
+      color: #fff;
+      margin: 15px 0 10px 0;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .wave {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url("https://i.ibb.co/wQZVxxk/wave.png");
+      background-size: 1000px 100px;
+    }
+
+    .wave#wave1 {
+      z-index: 1000;
+      opacity: 1;
+      bottom: 0;
+      animation: animateWaves 4s linear infinite;
+    }
+
+    .wave#wave2 {
+      z-index: 999;
+      opacity: 0.5;
+      bottom: 10px;
+      animation: animate 4s linear infinite !important;
+    }
+
+    .wave#wave3 {
+      z-index: 1000;
+      opacity: 0.2;
+      bottom: 15px;
+      animation: animateWaves 3s linear infinite;
+    }
+
+    .wave#wave4 {
+      z-index: 999;
+      opacity: 0.7;
+      bottom: 20px;
+      animation: animate 3s linear infinite;
+    }
+
+    @keyframes animateWaves {
+      0% {
+        background-position-x: 1000px;
+      }
+
+      100% {
+        background-positon-x: 0px;
+      }
+    }
+
+    @keyframes animate {
+      0% {
+        background-position-x: -1000px;
+      }
+
+      100% {
+        background-positon-x: 0px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid"><img src="boat_marina_fleet_log-removebg-preview (3).png" alt="">
+        <a class="navbar-brand " href="#home"><b>MARINA FLEET</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About us">About us</a>
+            </li>
+            <li class="nav-item gap-3">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#packaging">Packaging</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Yacht
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#fishing">Fishing</a></li>
+                <li><a class="dropdown-item" href="#sailing">Sailing</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#luxury">Luxury</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#feedback">FeedBack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact-US">Contact Us</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="video-container">
+      <h1 class="video-heading"> WELCOME TO MARINA FLEET </h1>
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <br>
+  <br>
+
+  <!-- about us section -->
+
+
+
+
+  <section class="about" id="About us">
+    <div class="main">
+      <img src="sscreen.png" alt="">
+      <div class="all-text">
+        <h2>About Us</h2>
+        <h1> We Provided Marina Fleet Where Explore the Blue Horizon </h1>
+        <p class="justify">In the Marina fleet yachts,boats,sailling boats,selling and chsrting company since 1970s.
+          we have our seaports in different contries of the world.including Pakistan ,India and we also have sports in
+          other contries.
+          we provide best services related to every part of your journey,included catering boat sailling.
+          Our engineers are well educated and welltraind are ready to provide any technical service in any time of day
+          and night.</p>
+        <div class="btn">
+          <button type="button">Our Team</button>
+          <button type="button" class="btn2">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- gallery section -->
+
+
+
+  <section id="gallery">
+    <div class="container">
+      <h1> MARINA FLEET GALLERY </h1>
+      <p>A marina fleet typically includes yachts and sailboats for luxury and recreational sailing,motorboats and
+        fishing boats for leisure cruising and fishing,
+        and personal watercraft and dinghies for quick trips and shore access.</p>
+      <div class="container-image">
+        <div class="image"><img src="boat1.jpg" alt=""></div>
+        <div class="image"><img src="boat2.jpg" alt=""></div>
+        <div class="image"><img src="boat3.jpg" alt=""></div>
+        <div class="image"><img src="boat4.jpg" alt=""></div>
+        <div class="image"><img src="boat5.jpg" alt=""></div>
+        <div class="image"><img src="boat6.jpg" alt=""></div>
+        <div class="image"><img src="boat7.jpg" alt=""></div>
+        <div class="image"><img src="boat8.jpg" alt=""></div>
+        <div class="image"><img src="boat9.jpg" alt=""></div>
+        <div class="image"><img src="boat10.jpg" alt=""></div>
+        <div class="image"><img src="boat11.jpg" alt=""></div>
+        <div class="image"><img src="boat12.jpg" alt=""></div>
+        <div class="image"><img src="boat13.jpg" alt=""></div>
+        <div class="image"><img src="boat14.jpg" alt=""></div>
+        <div class="image"><img src="boat15.jpg" alt=""></div>
+        <div class="image"><img src="boat16.jpg" alt=""></div>
+        <div class="image"><img src="boat17.jpg" alt=""></div>
+        <div class="image"><img src="boat18.jpg" alt=""></div>
+        <div class="image"><img src="boat19.jpg" alt=""></div>
+        <div class="image"><img src="boat20.jpg" alt=""></div>
+        <div class="image"><img src="boat21.jpg" alt=""></div>
+
+
+      </div>
+
+      <div class="popup-image">
+        <span> &times; </span>
+        <img src="boat1.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT  -->
+
+    <script>
+      document.querySelectorAll('.container-image img').forEach(image => {
+        image.onclick = () => {
+          document.querySelector('.popup-image').style.display = 'block';
+          document.querySelector('.popup-image img').src = image.getAttribute('src');
+        }
+      });
+
+      document.querySelector('.popup-image span').onclick = () => {
+        document.querySelector('.popup-image').style.display = 'none';
+      }
+
+    </script>
+  </section>
+
+  <br>
+  <br>
+
+  <!-- packaging section -->
+
+
+
+  <section id="packaging">
+    <h1>PACKAGING</h1>
+
+    <div class="sm-16">
+      <main>
+
+
+
+        <div class="card-container">
+          <div class="card">
+            <img src="lu1.jpeg">
+            <div class="card-content">
+              <h2>Mediterranean Luxury Yacht Escape</h2>
+
+              <b> Description:</b>7-day luxurious yacht tour of the Mediterranean. <br>
+              <b> Inclusions:</b> High-end suites, professional crew, gourmet meals, shore excursions, water sports,
+              onboard spa. <br>
+              <b>Pricing:</b>Starting at $50,000 for 7 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="lu2.jpeg">
+            <div class="card-content">
+              <h2>Caribbean Elite Yacht Adventure</h2>
+              <b> Description:</b> 5-day luxury yacht journey in the Caribbean. <br>
+              <b>Inclusions:</b>Luxurious suites, experienced crew, private chef, snorkeling, island hopping, beach
+              picnics. <br>
+              <b>Pricing:</b>Starting at $40,000 for 5 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="lu3.jpeg">
+            <div class="card-content">
+              <h2>Adriatic Opulence Yacht Experience</h2>
+              <b>Description:</b> 7-day luxury yacht voyage along the Adriatic coast. <br>
+              <b>Inclusions:</b> Elegant suites, skilled crew, gourmet dining, city tours, snorkeling, onboard spa. <br>
+              <b>Pricing:</b>Starting at $45,000 for 7 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="f1.jpeg">
+            <div class="card-content">
+              <h2>Deep Sea Fishing Adventure</h2>
+              <b> Description:</b> 3-day deep sea fishing trip for big game fish. <br>
+              <b>Inclusions:</b> Comfortable cabins, experienced crew, high-quality fishing gear, fresh meals, night
+              fishing. <br>
+              <b>Pricing:</b> Starting at $15,000 for 3 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="f4.jpeg">
+            <div class="card-content">
+              <h2>Family Fishing & Leisure Cruise</h2>
+              <b>Description:</b> 5-day family-friendly fishing and leisure cruise. <br>
+              <b> Inclusions:</b> Spacious cabins, friendly crew, family fishing gear, kid-friendly meals, inshore
+              fishing, beach outings. <br>
+              <b> Pricing:</b> Starting at $20,000 for 5 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="f3.jpeg">
+            <div class="card-content">
+              <h2>Luxury Sport Fishing Expedition</h2>
+              <b> Description:</b> 7-day luxury sport fishing trip for serious anglers. <br>
+              <b>Inclusions:</b> Luxurious suites, professional crew, top-notch fishing gear, gourmet dining, offshore
+              fishing. <br>
+              <b>Pricing:</b> Starting at $35,000 for 7 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+
+
+
+
+          <div class="card">
+            <img src="s1.jpeg">
+            <div class="card-content">
+              <h2> Mediterranean Sailing Escape</h2>
+              <b> Description: </b> luxury sailing tour exploring the Mediterranean’s stunning coastlines and islands.
+              <br>
+              <b>Inclusions:</b> Elegant cabins, experienced crew, gourmet meals, guided shore excursions, water sports.
+              <br>
+              <b>Pricing: </b> at $25,000 for 7 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="s2.jpeg">
+            <div class="card-content">
+              <h2>Caribbean Sailing Adventure</h2>
+              <b> Description:</b> 5-day sailing adventure through the turquoise waters of the Caribbean. <br>
+              <b>Inclusions:</b> Comfortable cabins, professional crew, fresh Caribbean cuisine, snorkeling, island
+              hopping. <br>
+              <b> Pricing:</b> Starting at $18,000 for 5 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="s3.jpeg">
+            <div class="card-content">
+              <h2>Adriatic Sailing Experience</h2>
+              <b>Description:</b> 7-day sailing journey along the breathtaking Adriatic coast. <br>
+              <b>Inclusions:</b> Luxurious cabins, skilled crew, gourmet dining, city tours, water activities. <br>
+              <b>Pricing: </b>Starting at $22,000 for 7 days. <br>
+              <button> <a href="#contact-US">BOOK NOW</a></button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </section>
+
+  <br>
+  <!-- fishing section -->
+
+
+  <section id="fishing">
+    <h1 class="h1-fishing">
+      FISHING-YACHTS
+    </h1>
+    <p>
+      A fishing vessel is a boat or ship used to catch fish and other valuable nektonic <br> aquatic animals (e.g.
+      shrimps/prawns, krills, coleoids, etc.) in the sea, lake or river. <br> Humans have used different kinds of
+      surface vessels in commercial, artisanal and recreational fishing.
+    </p>
+    <div class="container-fishing">
+
+      <div class="container1">
+        <div class="front">
+          <img src="Sun-Tracker-Bass-Buggy-18-DLX.png.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>Sun Tracker Bass Buggy 18 DLX</h2>
+
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="front">
+          <img src="Robalo-R247-2022.jpeg.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>Robalo R247</h2>
+
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="front">
+          <img src="Sportsman-Masters-267-OE.jpg.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2> Sportsman Masters 267 OE</h2>
+
+        </div>
+      </div>
+
+
+      <div class="container1">
+        <div class="front">
+          <img src="Nitro-Z19.png.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>Nitro Z19</h2>
+
+        </div>
+      </div>
+
+
+      <div class="container1">
+        <div class="front">
+          <img src="Mako-Pro-Skiff-17-CC.png.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>Mako Pro Skiff 17 CC</h2>
+
+        </div>
+      </div>
+
+
+      <div class="container1">
+        <div class="front">
+          <img src="Crestliner-1700-Storm.jpeg.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2> Crestliner 1700 Storm</h2>
+
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="front">
+          <img src="Cobia-220-CC.jpeg.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>Cobia 220 CC</h2>
+
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="front">
+          <img src="carolina-skiff-21.jpeg.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>Carolina Skiff 21</h2>
+
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="front">
+          <img src="9 massive fishing boat.webp" alt="">
+
+        </div>
+        <div class="back">
+          <h2>9 Massive Fishing Boat </h2>
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <br>
+  <!-- sailing section -->
+  <section id="sailing">
+    <h1 class="h1-sailing">
+      SAILING-YACHTS
+    </h1>
+
+
+    <p>
+      A sailboat is a relatively small boat that uses wind power to propel it forward. <br> When the wind is strong
+      enough, sailboats can move very quickly.
+    </p>
+    <div class="container-sailing">
+
+      <div class="container3">
+        <div class="front">
+          <img src="MALTESE FALCON.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>MALTESE FALCON</h1>
+
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="front">
+          <img src="SAILING YACHT A.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>SAILING YACHT A</h1>
+
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="front">
+          <img src="BLACK PEARL.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>BLACK PEARL</h1>
+
+        </div>
+      </div>
+
+
+      <div class="container3">
+        <div class="front">
+          <img src="AQUIJO.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>AQUIJO</h1>
+
+        </div>
+      </div>
+
+
+      <div class="container3">
+        <div class="front">
+          <img src="MIRABELLA V.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>MIRABELLA V</h1>
+
+        </div>
+      </div>
+
+
+      <div class="container3">
+        <div class="front">
+          <img src="BADISI.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>BADISI</h1>
+
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="front">
+          <img src="ATHENA.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>ATHENA</h1>
+
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="front">
+          <img src="c46.jpg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>C46</h1>
+
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="front">
+          <img src="c50.jpg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>C50</h1>
+
+        </div>
+      </div>
+
+
+  </section>
+
+  <br>
+  <!-- section luxury -->
+
+
+  <section id="luxury">
+    <h1 class="h1-luxury">
+      LUXURY-YACHTS
+    </h1>
+    <p>
+      A Luxury yacht (also super-yacht, large yacht and mega-yacht) is a very expensive, <br>privately owned,
+      professionally crewed sailing or motor yacht.There is no industry-wide standard for <br> the difference between
+      super-yacht and mega-yacht.
+    </p>
+    <div class="container-luxury">
+
+      <div class="container2">
+        <div class="front">
+          <img src="DAR.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>DAR</h1>
+
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="front">
+          <img src="LUSINE.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>LUSINE</h1>
+
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="front">
+          <img src="SAMURAI.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>SAMURAI</h1>
+
+        </div>
+      </div>
+
+
+      <div class="container2">
+        <div class="front">
+          <img src="MADSUMMER.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>MADSUMMER</h1>
+
+        </div>
+      </div>
+
+
+      <div class="container2">
+        <div class="front">
+          <img src="SARASTAR.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>SARASTAR</h1>
+
+        </div>
+      </div>
+
+
+      <div class="container2">
+        <div class="front">
+          <img src="PHOENIX II.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>PHOENIX II</h1>
+
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="front">
+          <img src="JUST J,S.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>JUSTJ,S</h1>
+
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="front">
+          <img src="METIS.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1>METIS</h1>
+
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="front">
+          <img src="lu3.jpeg" alt="">
+
+        </div>
+        <div class="back">
+          <h1> Blue luxury </h1>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <br>
+  <!-- feedback section -->
+
+  <section class="feedback" id="feedback">
+
+    <div class="feedback-form">
+      <h2> GIVE YOUR <span>FEEDBACK</span></h2>
+      <P>Please Give Us Feedback For Our Services </P>
+      <form action="">
+        <input type="" placeholder="YOUR NAME" required>
+        <input type="email" name="email" id="" placeholder="E-MAIL" required>
+        <textarea name="" id="" cols="30" rows="10" placeholder="FEEDBACK" required>
+</textarea>
+        <input type="submit" name="" value="submit" class="btn">
+      </form>
+    </div>
+    <div class="feedback-img">
+      <img src="WhatsApp Image 2024-06-02 at 05.52.21_46a351aa.jpg" alt="">
+    </div>
+  </section>
+
+  <br>
+
+  <!-- contact section -->
+
+
+  <section id="contact-US">
+    <div class="contactusform">
+      <h1 class="header">MARINA FLEET</h1>
+      <h4 class="heading">READY TO GO</h4>
+      <p class="para">Contact Us More Information And Ready to Go With us For Your Memorable Journey</p>
+      <div class="contactform">
+        <form action="">
+          <h1 class="sub-heading">CONTACT US</h1>
+          <p class=" para para2">
+            CONTACT US FOR QUERY. I HELP YOU TO JOIN OUR MEMORABLE TOUR.
+          </p>
+          <input type="text" class="input" placeholder="YOUR NAME">
+          <input type="text" class="input" placeholder="YOUR EMAIL">
+          <input type="text" class="input" placeholder="YOUR QUERY">
+          <textarea class="input" cols="30" rows="5"></textarea>
+          <input type="submit" class="input submit" value="SEND">
+        </form>
+        <div class="map-container">
+          <!-- <div class="mapbg"></div> -->
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.012216478314!2d67.06613227436729!3d24.931653742406954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f684a577aa1%3A0x8eef9ba9639151a5!2sAPTECH%20Computer%20Education%20F.B%20.Area!5e0!3m2!1sen!2s!4v1716494999490!5m2!1sen!2s"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="contactmethod">
+        <div class="method">
+          <i class="fa-solid fa-location-dot contactIcon"></i>
+          <article class="text">
+            <h1 class="sub-heading">LOCATION</h1>
+            <p class="para"> APTECH F.B AREA KARACHI</p>
+          </article>
+        </div>
+        <div class="method">
+          <i class="fa-solid fa-envelope contactIcon"></i>
+          <article class="text">
+            <h1 class="sub-heading">EMAIL</h1>
+            <p class="para">ainanmaymon@gmail.com</p>
+          </article>
+        </div>
+        <div class="method">
+          <i class="fa-solid fa-phone-volume contactIcon"></i>
+          <article class="text">
+            <h1 class="sub-heading">PHONE NUMBER</h1>
+            <p class="para">0321-456789</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- footer section -->
+
+
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/ " target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.youtube.com/" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/login" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+
+    <p>&copy;2024 Marina Fleet | All Rights Reserved</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
